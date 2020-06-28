@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Nimes</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preload" href="fonts/bloggersans.woff" as="font" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.min.css">
   </head>
 
@@ -80,7 +81,7 @@
               <button class="filters__clear-btn" type="reset">Clear all</button>
 
               <section class="filters__categories">
-                <section class="filters__category">
+                <fieldset class="filters__category">
                   <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close filter">
                     <span class="filters__name">Price</span>
                     <span class="filters__toggle-icon"></span>
@@ -98,9 +99,9 @@
                     <div class="range-controls__toggle range-controls__toggle--left"><span class="visually-hidden">Pull left</span></div>
                     <div class="range-controls__toggle range-controls__toggle--right"><span class="visually-hidden">Pull right</span></div>
                   </div>
-                </section>
+                </fieldset>
 
-                <section class="filters__category">
+                <fieldset class="filters__category">
                   <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close filter">
                     <span class="filters__name">Color</span>
                     <span class="filters__toggle-icon"></span>
@@ -149,9 +150,9 @@
                       <span class="visually-hidden">bright-blue</span>
                     </label>
                   </div>
-                </section>
+                </fieldset>
 
-                <section class="filters__category">
+                <fieldset class="filters__category">
                   <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close filter">
                     <span class="filters__name">Collection</span>
                     <span class="filters__toggle-icon"></span>
@@ -178,7 +179,7 @@
                       name="collection" value="soulluxe"/>
                     <label for="collection-soulluxe" class="filters__collection-title">Soulluxe</label>
                   </div>
-                </section>
+                </fieldset>
               </section>
 
               <button class="filters__btn btn" type="button">Apply (9 products)</button>
