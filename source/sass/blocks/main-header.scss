@@ -1,0 +1,12 @@
+.main-header__nav-list {
+  @include list-reset;
+}
+
+.main-header__nav-link {
+  font: inherit;
+  color: $dark-gray-blue;
+}
+
+.main-header__user-list {
+  @include list-reset;
+}

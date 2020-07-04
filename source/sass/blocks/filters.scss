@@ -1,0 +1,33 @@
+.filters__title {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+}
+
+.filters__clear-btn,
+.filters__price-count,
+.filters__collection-title {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.filters__clear-btn {
+  font-weight: 500;
+}
+
+.filters__name {
+  font-weight: 500;
+}
+
+.filters__price-count {
+  font-weight: bold;
+}
+
+.filters__collection-title {
+  font-weight: 500;
+  color: $gray;
+
+  &--active {
+    color: $dark-gray-blue;
+  }
+}

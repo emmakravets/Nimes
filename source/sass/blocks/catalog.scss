@@ -1,0 +1,20 @@
+.catalog__list {
+  @include list-reset;
+}
+
+.catalog__card-title {
+  font-weight: 500;
+  color: $dark-gray-blue;
+}
+
+.catalog__card-price {
+  @include text-reset;
+
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+.catalog__controls-text {
+  @include text-reset;
+}

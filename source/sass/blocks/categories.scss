@@ -1,0 +1,16 @@
+.categories__title {
+  @include title;
+}
+
+.categories__list {
+  @include list-reset;
+}
+
+.categories__name {
+  font-weight: 500;
+  color: $dark-gray-blue;
+}
+
+.categories__btn {
+  @include underlined-btn;
+}

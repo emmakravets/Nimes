@@ -16,7 +16,7 @@
   <body>
     <header class="main-header">
       <div class="main-header__container">
-        <a class="main-header__logo logo" href="#">
+        <a class="main-header__logo logo" href="index.html">
           <img class="logo__image" src="http://placehold.it/75x17" width="75" height="17" alt="Nimes Shop Logo">
         </a>
         <button class="main-header__toggle" type="button" aria-label="Open/close menu"></button>
@@ -57,7 +57,7 @@
         <div class="catalog-promo__container">
           <ul class="catalog-promo__breadcrumbs breadcrumbs">
             <li class="breadcrumbs__item">
-              <a class="breadcrumbs__link" href="#">All categories</a>
+              <a class="breadcrumbs__link breadcrumbs__link--mobile-hidden" href="#">All categories</a>
             </li>
             <li class="breadcrumbs__item">
               <a class="breadcrumbs__link" href="#">Woman</a>
@@ -86,8 +86,9 @@
               <button class="filters__clear-btn" type="reset">Clear all</button>
 
               <section class="filters__categories">
+                <h4 class="visually-hidden">Filters categories</h4>
                 <fieldset class="filters__category">
-                  <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close filter">
+                  <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close price filter">
                     <span class="filters__name">Price</span>
                     <span class="filters__toggle-icon"></span>
                   </button>
@@ -107,7 +108,7 @@
                 </fieldset>
 
                 <fieldset class="filters__category">
-                  <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close filter">
+                  <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close color filter">
                     <span class="filters__name">Color</span>
                     <span class="filters__toggle-icon"></span>
                   </button>
@@ -148,7 +149,7 @@
                       <span class="visually-hidden">light-gray</span>
                     </label>
 
-                    <input type="radio" id="color-light-bright-blue"
+                    <input type="radio" id="color-bright-blue"
                       class="filters__color-input filters__color-input--light-bright-blue visually-hidden"
                       name="color" value="bright-blue"/>
                     <label for="color-bright-blue" class="filters__color filters__color--bright-blue">
@@ -158,7 +159,7 @@
                 </fieldset>
 
                 <fieldset class="filters__category">
-                  <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close filter">
+                  <button class="filters__category-toggle filters__category-toggle--closed" type="button" aria-label="Open/Close collection filter">
                     <span class="filters__name">Collection</span>
                     <span class="filters__toggle-icon"></span>
                   </button>
@@ -188,60 +189,60 @@
               </section>
 
               <button class="filters__btn btn" type="button">Apply (9 products)</button>
-            </form
+            </form>
           </section>
 
           <ul class="catalog__list">
             <li class="catalog__card">
-               <h3 class="catalog__card-title">Jacket</h3>
+               <a class="catalog__card-title" href="#">Jacket</a>
                <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
                <p class="catalog__card-price">$ 40</p>
             </li>
 
             <li class="catalog__card">
-              <h3 class="catalog__card-title">Jacket</h3>
+              <a class="catalog__card-title" href="#">Jacket</a>
               <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
               <p class="catalog__card-price">$ 70</p>
             </li>
 
             <li class="catalog__card">
-              <h3 class="catalog__card-title">Jacket</h3>
+              <a class="catalog__card-title" href="#">Jacket</a>
               <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
               <p class="catalog__card-price">$ 60</p>
             </li>
 
             <li class="catalog__card">
-              <h3 class="catalog__card-title">Jacket</h3>
+              <a class="catalog__card-title" href="#">Jacket</a>
               <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
               <p class="catalog__card-price">$ 50</p>
             </li>
 
             <li class="catalog__card catalog__card-large">
-              <h3 class="catalog__card-title">Jacket</h3>
+              <a class="catalog__card-title" href="#">Jacket</a>
               <img class="catalog__card-image" src="http://placehold.it/290x442" width="290" height="442" alt="Woman in denim jacket">
               <p class="catalog__card-price">$ 160</p>
             </li>
 
             <li class="catalog__card">
-               <h3 class="catalog__card-title">Jacket</h3>
+               <a class="catalog__card-title" href="#">Jacket</a>
                <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
                <p class="catalog__card-price">$ 40</p>
             </li>
 
             <li class="catalog__card">
-              <h3 class="catalog__card-title">Jacket</h3>
+              <a class="catalog__card-title" href="#">Jacket</a>
               <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
               <p class="catalog__card-price">$ 110</p>
             </li>
 
             <li class="catalog__card">
-              <h3 class="catalog__card-title">Jacket</h3>
+              <a class="catalog__card-title" href="#">Jacket</a>
               <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
               <p class="catalog__card-price">$ 35</p>
             </li>
 
             <li class="catalog__card">
-              <h3 class="catalog__card-title">Jacket</h3>
+              <a class="catalog__card-title" href="#">Jacket</a>
               <img class="catalog__card-image" src="http://placehold.it/130x160" width="130" height="160" alt="Woman in denim jacket">
               <p class="catalog__card-price">$ 85</p>
             </li>
@@ -258,7 +259,7 @@
 
     <footer class="main-footer">
       <div class="main-footer__container">
-        <a class="main-footer__logo logo" href="#">
+        <a class="main-footer__logo logo" href="index.html">
           <img class="logo__image" src="http://placehold.it/75x17" width="75" height="17" alt="Nimes Shop Logo">
         </a>
         <nav class="main-footer__nav">
@@ -284,7 +285,7 @@
         <ul class="main-footer__social social">
           <li class="social__item">
             <a class="social__link" href="#" aria-label="Nimes in facebook">
-              <img class="social__icon social__icon--facebook" src="http://placehold.it/10.5x20" width="10.5" height="20">
+              <img class="social__icon social__icon--facebook" src="http://placehold.it/11x20" width="11" height="20">
             </a>
           </li>
           <li class="social__item">

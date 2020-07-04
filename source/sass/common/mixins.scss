@@ -1,0 +1,29 @@
+@mixin pseudo {
+  content: "";
+  position: absolute;
+}
+
+@mixin text-reset {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin list-reset {
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+@mixin title {
+  @include text-reset;
+
+  font-size: 26px;
+  line-height: 30px;
+  font-weight: bold;
+}
+
+@mixin underlined-btn {
+  font-weight: 500;
+  color: $dark-gray-blue;
+}

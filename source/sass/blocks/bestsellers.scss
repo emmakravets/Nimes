@@ -1,0 +1,24 @@
+.bestsellers__title {
+  @include title;
+}
+
+.bestsellers__catalog {
+  @include list-reset;
+}
+
+.bestsellers__card-title {
+  font-weight: 500;
+  color: $dark-gray-blue;
+}
+
+.bestsellers__price {
+  @include text-reset;
+
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 16px;
+}
+
+.bestsellers__btn {
+  @include underlined-btn;
+}

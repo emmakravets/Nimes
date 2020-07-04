@@ -1,0 +1,14 @@
+.main-footer {
+  background-color: $dark-gray-blue;
+}
+
+.main-footer__nav-list {
+  @include list-reset;
+}
+
+.main-footer__nav-link {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  color: $white;
+}

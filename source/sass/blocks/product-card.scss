@@ -1,0 +1,39 @@
+.product-card {
+  background-color: $light-gray;
+}
+
+.product-card__title {
+  @include title;
+}
+
+.product-card__description,
+.product-card__size {
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.product-card__description,
+.product-card__controls-title,
+.product-card__price {
+  @include text-reset;
+}
+
+.product-card__controls-title,
+.product-card__size {
+  font-weight: 500;
+}
+
+.product-card__size {
+  text-transform: uppercase;
+  color: $gray;
+
+  &--active {
+    color: $dark-gray-blue;
+  }
+}
+
+.product-card__price {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 21px;
+}

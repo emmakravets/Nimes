@@ -1,3 +1,18 @@
 @import "common/variables.scss";
 @import "common/fonts.scss";
+@import "common/mixins.scss";
 @import "common/main-properties.scss";
+
+@import "blocks/main-header.scss";
+@import "blocks/btn.scss";
+@import "blocks/website-promo.scss";
+@import "blocks/bestsellers.scss";
+@import "blocks/season-collection.scss";
+@import "blocks/categories.scss";
+@import "blocks/main-footer.scss";
+@import "blocks/catalog-promo.scss";
+@import "blocks/breadcrumbs.scss";
+@import "blocks/filters.scss";
+@import "blocks/catalog.scss";
+@import "blocks/product-card.scss";
+@import "blocks/similar-cards.scss";
