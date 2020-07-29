@@ -1,0 +1,96 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Nimes
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    each font in ['worksans', 'worksans-medium', 'worksans-bold', 'anton']
+      link(rel="preload" href="fonts/" + font + ".woff" as="font" crossorigin="anonymous")
+    each font in ['worksans', 'worksans-medium', 'worksans-bold', 'anton']
+      link(rel="preload" href="fonts/" + font + ".woff2" as="font" crossorigin="anonymous")
+    link(rel="stylesheet" href="css/style.min.css")
+
+  body
+    header.main-header
+      div.main-header__container
+        a.main-header__logo.logo
+          img.logo__image(src="http://placehold.it/75x17" width="75" height="17" alt="Nimes Shop Logo")
+        nav.main-header__nav
+          ul.main-header__nav-list
+            each title, src in {'Woman': 'catalog.html', 'Man': 'catalog-man.html', 'New': 'catalog-new.html'}
+              li.main-header__nav-item
+                a.main-header__nav-link(href=title)= src
+        div.main-header__user-nav
+          ul.main-header__user-list
+            - const headerList = ["Cart", "Search"]
+              each item in headerList
+                li.main-header__user-item
+                  a.main-header__user-link(href="#")
+                    img.main-header__user-icon(src="http://placehold.it/18x16" width="18" height="16")
+                    span.visually-hidden= item
+
+    main.main-page
+      section.main-page__promo.website-promo
+        div.websilte-promo__container
+          h1.website-promo__title The quality you deserve
+            span.promo__title-large Denim
+            img.website-promo__image(src="http://placehold.it/202x249" width="202" height="249" alt="Woman in denim jacket")
+            a.website-promo__btn.btn(href="#") Check new collection
+            button.website-promo__scroll-down(type="button" aria-label="Scroll page down")
+              img(src="http://placehold.it/10x27" width="10" height="27")
+
+      section.main-page__bestsellers.bestsellers
+        div.bestsellers__container
+          h2.bestsellers__title Bestsellers
+          ul.bestsellers__catalog
+            mixin bestsellers-catalog-item(img, alt, title, price)
+              li.bestsellers__card
+                img.bestsellers__image(src=img width="130" height="160" alt=alt)
+                a.bestsellers__card-title(href="#")= title
+                p.bestsellers__price= price
+            +bestsellers-catalog-item("http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 120")
+                +bestsellers-catalog-item("http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 140")
+                +bestsellers-catalog-item("http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 90")
+                +bestsellers-catalog-item("http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 160")
+          a.bestsellers__btn(href="#") View all
+
+      section.main-page__season-collection.season-collection
+        div.season-collection
+          h2.season-collection__promo-title Street fashion collection
+            span.season-collection__title Fall 2020
+          a.season-collection__btn.btn(href="#") Shop now
+          img.season-collection__image(src="http://placehold.it/320x226" width="320" height="226" alt="Woman in denim clothes")
+
+      section.main-page__categories.categories
+        div.categories__container
+          h2.categories__title Shop by category
+          ul.categories__list
+            mixin categories-item(img, alt, title)
+              li.categories__item
+                img.categories__image(src=img width="130" height="160" alt=alt)
+                a.categories__name(href="#")= title
+            +categories-item("http://placehold.it/130x160", "Woman in denim jeans", "Jeans")
+            +categories-item("http://placehold.it/130x160", "Man in denim shirt", "Shirts")
+            +categories-item("http://placehold.it/130x160", "Woman in denim overalls", "Overalls")
+            +categories-item("http://placehold.it/130x160", "Woman and man in denim jackets", "Jackets")
+          a.categories__btn(href="#") View all
+
+    footer.main-footer
+      div.main-footer__container
+        a.main-footer__logo.logo
+          img.logo__image(src="http://placehold.it/75x17" width="75" height="17" alt="Nimes Shop Logo")
+        nav.main-footer__nav
+          ul.main-footer__nav-list
+            - const footerList = ["Shop", "Delivery", "Sitemap", "Service", "Contacts"]
+              each item in footerList
+                li.main-footer__nav-item
+                  a.main-footer__nav-link(href="#")= item
+        ul.main-footer__social.social
+          mixin social-item(title, width, height)
+            li.social__item
+              a.social__link(href="#" aria-label="Nimes in " + title)
+                img.social__icon(class="social__icon--" + title src="http://placehold.it/11x20" width=width height=height)
+          +social-item("facebook", "11", "20")
+          +social-item("instagram", "20", "20")
+          +social-item("pinterest", "20", "20")
+          +social-item("twitter", "20", "16")
