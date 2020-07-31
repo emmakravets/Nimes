@@ -1,68 +1,51 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="utf-8")
-    title Nimes
-    meta(name="viewport" content="width=device-width, initial-scale=1")
-    each font in ['worksans', 'worksans-medium', 'worksans-bold', 'anton']
-      link(rel="preload" href="fonts/" + font + ".woff" as="font" crossorigin="anonymous")
-    each font in ['worksans', 'worksans-medium', 'worksans-bold', 'anton']
-      link(rel="preload" href="fonts/" + font + ".woff2" as="font" crossorigin="anonymous")
-    link(rel="stylesheet" href="css/style.min.css")
+extends ./layouts/base
 
-  body
-    block variables
-      - let isButton = false
-    include ./header.pug
+block content
+  - let isButton = false
+  include ./layouts/header
+  |
+  |
+  main.main-page
+    section.main-page__promo.website-promo
+      div.websilte-promo__container
+        h1.website-promo__title The quality you deserve
+          span.promo__title-large Denim
+          img.website-promo__image(src="http://placehold.it/202x249" width="202" height="249" alt="Woman in denim jacket")
+          a.website-promo__btn.btn(href="#") Check new collection
+          button.website-promo__scroll-down(type="button" aria-label="Scroll page down")
+            img(src="http://placehold.it/10x27" width="10" height="27")
 
-    block header
+    section.main-page__bestsellers.bestsellers
+      div.bestsellers__container
+        h2.bestsellers__title Bestsellers
+        include ./layouts/mixins
+        ul.bestsellers__list
+          +catalog-item("bestsellers", "http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 120")
+          +catalog-item("bestsellers", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 140")
+          +catalog-item("bestsellers", "http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 90")
+          +catalog-item("bestsellers", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 160")
+        a.bestsellers__btn(href="#") View all
 
-    main.main-page
-      section.main-page__promo.website-promo
-        div.websilte-promo__container
-          h1.website-promo__title The quality you deserve
-            span.promo__title-large Denim
-            img.website-promo__image(src="http://placehold.it/202x249" width="202" height="249" alt="Woman in denim jacket")
-            a.website-promo__btn.btn(href="#") Check new collection
-            button.website-promo__scroll-down(type="button" aria-label="Scroll page down")
-              img(src="http://placehold.it/10x27" width="10" height="27")
+    section.main-page__season-collection.season-collection
+      div.season-collection
+        h2.season-collection__promo-title Street fashion collection
+          span.season-collection__title Fall 2020
+        a.season-collection__btn.btn(href="#") Shop now
+        img.season-collection__image(src="http://placehold.it/320x226" width="320" height="226" alt="Woman in denim clothes")
 
-      section.main-page__bestsellers.bestsellers
-        div.bestsellers__container
-          h2.bestsellers__title Bestsellers
-          ul.bestsellers__catalog
-            mixin bestsellers-catalog-item(listName, img, alt, title, price)
-              li(class=listName + "__card")
-                img(class=listName + "__card-image" src=img width="130" height="160" alt=alt)
-                a(class=listName + "__card-title" href="#")= title
-                p(class=listName + "__card-price")= price
-            +bestsellers-catalog-item("bestsellers", "http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 120")
-            +bestsellers-catalog-item("bestsellers", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 140")
-            +bestsellers-catalog-item("bestsellers", "http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 90")
-            +bestsellers-catalog-item("bestsellers", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 160")
-          a.bestsellers__btn(href="#") View all
-
-      section.main-page__season-collection.season-collection
-        div.season-collection
-          h2.season-collection__promo-title Street fashion collection
-            span.season-collection__title Fall 2020
-          a.season-collection__btn.btn(href="#") Shop now
-          img.season-collection__image(src="http://placehold.it/320x226" width="320" height="226" alt="Woman in denim clothes")
-
-      section.main-page__categories.categories
-        div.categories__container
-          h2.categories__title Shop by category
-          ul.categories__list
-            mixin categories-item(img, alt, title)
-              li.categories__item
-                img.categories__image(src=img width="130" height="160" alt=alt)
-                a.categories__name(href="#")= title
-            +categories-item("http://placehold.it/130x160", "Woman in denim jeans", "Jeans")
-            +categories-item("http://placehold.it/130x160", "Man in denim shirt", "Shirts")
-            +categories-item("http://placehold.it/130x160", "Woman in denim overalls", "Overalls")
-            +categories-item("http://placehold.it/130x160", "Woman and man in denim jackets", "Jackets")
-          a.categories__btn(href="#") View all
-
-    include ./footer.pug
-
-    block footer
+    section.main-page__categories.categories
+      div.categories__container
+        h2.categories__title Shop by category
+        ul.categories__list
+          mixin categories-item(img, alt, title)
+            li.categories__item
+              img.categories__image(src=img width="130" height="160" alt=alt)
+              a.categories__name(href="#")= title
+          +categories-item("http://placehold.it/130x160", "Woman in denim jeans", "Jeans")
+          +categories-item("http://placehold.it/130x160", "Man in denim shirt", "Shirts")
+          +categories-item("http://placehold.it/130x160", "Woman in denim overalls", "Overalls")
+          +categories-item("http://placehold.it/130x160", "Woman and man in denim jackets", "Jackets")
+        a.categories__btn(href="#") View all
+  |
+  |
+  include ./layouts/footer

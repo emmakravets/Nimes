@@ -1,0 +1,14 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title Nimes
+    meta(name="viewport" content="width=device-width, initial-scale=1")
+    each font in ['worksans', 'worksans-medium', 'worksans-bold', 'anton']
+      link(rel="preload" href="fonts/" + font + ".woff" as="font" crossorigin="anonymous")
+    each font in ['worksans', 'worksans-medium', 'worksans-bold', 'anton']
+      link(rel="preload" href="fonts/" + font + ".woff2" as="font" crossorigin="anonymous")
+    link(rel="stylesheet" href="css/style.min.css")
+
+  body
+    block content

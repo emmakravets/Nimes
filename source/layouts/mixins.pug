@@ -1,0 +1,5 @@
+mixin catalog-item(listName, img, alt, title, price)
+  li(class=listName + "__card")
+    img(class=listName + "__card-image" src=img width="130" height="160" alt=alt)
+    a(class=listName + "__card-title" href="#")= title
+    p(class=listName + "__card-price")= price
