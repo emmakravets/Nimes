@@ -1,0 +1,110 @@
+extends ./layouts/base
+
+block content
+  - let isButton = true
+
+  mixin filter-button(name)
+    button.filters__category-toggle.filters__category-toggle--closed(type="button" aria-label="Open/Close " + name + " filter")
+      span.filters__name name
+      span.filters__toggle-icon
+
+  mixin filter-category(categoryName, filterName)
+    input.visually-hidden(class="filters__" + categoryName + "-input filters__" + categoryName + "-input--" + filterName
+      id=categoryName + "-" + filterName type="radio" name=categoryName value=filterName)
+    label(class="filters__" + categoryName + " filters__" + categoryName + "--" + filterName for=categoryName + "-" + filterName)
+      span.visually-hidden= filterName
+    |
+    |
+
+  include ./layouts/header
+  |
+  |
+
+  main.main-page
+    section.main-page__catalog-promo.catalog-promo
+      div.catalog-promo__container
+        ul.catalog-promo__breadcrumbs.breadcrumbs
+          li.breadcrumbs__item
+            a.breadcrumbs__link.breadcrumbs__link--mobile-hidden(href="#") All categories
+          li.breadcrumbs__item
+            a.breadcrumbs__link(href="#") Woman
+          li.breadcrumbs__item
+            a.breadcrumbs__link.breadcrumbs__link--active Jackets
+        h1.catalog-promo__title Denim Collection Fall 2020
+        img.catalog-promo__image(src="http://placehold.it/299x260" width="299" height="260" alt="Denim jacket patch")
+
+    section.main-page__catalog.catalog
+      div.catalog__container
+        h2.visually-hidden Jackets catalog
+        section.catalog__filters.filters
+          h3.visually-hidden Filters
+
+          form.catalog__form(action="#" method="post")
+            button.filters__main-toggle.filters__main-toggle--closed(type="button" aria-label="Open/Close filters")
+              span.filters__title Filter by
+              span.filters__toggle-icon
+
+            button.filters__clear-btn(type="reset") Clear all
+
+            section.filters__categories
+              h4.visually-hidden Filters categories
+              fieldset.filters__category
+                +filter-button("Price")
+                div.filters__price
+                  input.filters__price-input.filters__price-input--left(type="text" name="min-price" value="$40" aria-label="Min price")
+                  label.filters__price-count $ 40
+                  input.filters__price-input.filters__price-input--right(type="text" name="max-price" value="$240" aria-label="Max price")
+                  label.filters__price-count $ 240
+                div.filters__price-range.range-controls
+                  div.range-controls__scale
+                    div.range-controls__bar
+                  div.range-controls__toggle.range-controls__toggle--left
+                    span.visually-hidden Pull left
+                  div.range-controls__toggle.range-controls__toggle--right
+                    span.Pull right
+
+              fieldset.filters__category
+                +filter-button(Color)
+                div.filters__colors-wrap
+                  +filter-category("color", "blue-gray")
+                  +filter-category("color", "blue")
+                  +filter-category("color", "gray")
+                  +filter-category("color", "black")
+                  +filter-category("color", "light-gray")
+                  +filter-category("color", "bright-blue")
+
+              fieldset.filters__category
+                +filter-button(Collection)
+                div.filters__collection
+                  +filter-category("collection", "casual")
+                  +filter-category("collection", "petite")
+                  +filter-category("collection", "classic")
+                  +filter-category("collection", "soulluxe")
+
+            button.filters__btn.btn(type="button") Apply (9 products)
+
+        include ./layouts/catalog-mixins
+        ul.catalog__list
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 40")
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 70")
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 60")
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 50")
+          li.catalog__card.catalog__card-large
+            a.catalog__card-title(href="#") Jacket
+            img.catalog__card-image(src="http://placehold.it/290x442" width="290" height="442" alt="Woman in denim jacket")
+            p.catalog__card-price $ 160
+          |
+          |
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 40")
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 110")
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 35")
+          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 85")
+
+        div.catalog__controls
+          p.catalog__controls-text Showing 9 of 45 items
+          button.catalog__controls-range(type="button")
+        button.catalog__btn.btn(type="button") Load more
+
+  |
+  |
+  include ./layouts/footer
