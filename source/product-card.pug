@@ -1,0 +1,71 @@
+extends ./layouts/base
+
+block content
+  - let isButton = true
+
+  mixin card-controls(name, value)
+    input.visually-hidden(class="product-card__" + name + "-input product-card__" + name + "-input--" + value
+      id=name + "-" + value type="radio" name=name value=value)
+    label(class="product-card__" + name + " product-card__" + name + "--" + value + " product-card__" + name + "--active"
+      for=name + "-" + value)
+        if name === "color"
+          span.visually-hidden= value
+        else
+          = value
+    |
+    |
+
+  include ./layouts/header
+  |
+  |
+
+  main.main-page
+    section.main-page__card.product-card
+      h1.visually-hidden Overalls
+      div.product-card__container
+        section.product-card__preview.card-preview
+          h2.visually-hidden Overalls preview
+          img.card-preview__image(src="http://placehold.it/244x310" width="244" height="310" alt="Woman in denim overalls")
+
+          div.card-preview__controls
+            each button in ["left", "right"]
+              button.card-preview__controls-arrow(class="card-preview__controls-arrow--" + button
+                type="button" aria-label="Switch " + button)
+
+        section.product-card__details
+          form.product-card__inner(action="#" method="post")
+            h2.product-card__title Overalls
+            p.product-card__description Overalls in washed organic cotton denim. Collar, button fly, and adjustable belt at waist. Chest pockets with flap. Long, gently flared sleeves and straight legs with front and back pockets.
+
+            section.product-card__controls
+              h3.product-card__controls-title Color
+              +card-controls("color", "blue-gray")
+              +card-controls("color", "blue")
+              +card-controls("color", "gray")
+
+            section.product-card__controls
+              h3.product-card__controls-title Size
+                +card-controls("size", "xs")
+                +card-controls("size", "s")
+                +card-controls("size", "m")
+                +card-controls("size", "l")
+                +card-controls("size", "xl")
+
+            p.product-card__price $ 160
+            button.product-card__btn.btn Add to cart
+
+    section.main-page__similar-cards.similar-cards
+      div.similar-cards__container
+        h2.similar-cards__title You may also like
+
+        include ./layouts/catalog-mixins
+        ul.similar-cards__list
+          +catalog-item("similar-cards", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 140")
+          +catalog-item("similar-cards", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 110")
+          +catalog-item("similar-cards", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 70")
+          +catalog-item("similar-cards", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 60")
+
+          a.similar-cards__btn(href="#") View all
+  |
+  |
+  include ./layouts/footer
