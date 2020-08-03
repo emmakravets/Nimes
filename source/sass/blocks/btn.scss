@@ -1,5 +1,15 @@
 .btn {
+  display: block;
+  width: 70.4%;
+  max-width: 300px;
+  padding: 0;
+  padding: 27px 17px;
+  justify-self: center;
+
   font-weight: bold;
   color: $white;
   text-align: center;
+
+  background-color: $dark-gray-blue;
+  border: none;
 }

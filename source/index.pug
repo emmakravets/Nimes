@@ -10,20 +10,21 @@ block content
       div.websilte-promo__container
         h1.website-promo__title The quality you deserve
           span.promo__title-large Denim
-          img.website-promo__image(src="http://placehold.it/202x249" width="202" height="249" alt="Woman in denim jacket")
-          a.website-promo__btn.btn(href="#") Check new collection
-          button.website-promo__scroll-down(type="button" aria-label="Scroll page down")
-            img(src="http://placehold.it/10x27" width="10" height="27")
+        div.website-promo__image-wrapper
+          img.website-promo__image(src="img/website-promo.jpg" width="202" height="249" alt="Woman in denim jacket")
+        a.website-promo__btn.btn(href="#") Check new collection
+        button.website-promo__scroll-down(type="button" aria-label="Scroll page down")
+          img(src="http://placehold.it/10x27" width="10" height="27")
 
     section.main-page__bestsellers.bestsellers
       div.bestsellers__container
         h2.bestsellers__title Bestsellers
         include ./layouts/catalog-mixins
         ul.bestsellers__list
-          +catalog-item("bestsellers", "http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 120")
-          +catalog-item("bestsellers", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 140")
-          +catalog-item("bestsellers", "http://placehold.it/130x160", "Man in denim jacket", "Jacket", "$ 90")
-          +catalog-item("bestsellers", "http://placehold.it/130x160", "Woman in denim overalls", "Overalls", "$ 160")
+          +catalog-item("bestsellers", "img/man-jacket-1.jpg", "Man in denim jacket", "Jacket", "$ 120")
+          +catalog-item("bestsellers", "img/overalls-1.jpg", "Woman in denim overalls", "Overalls", "$ 140")
+          +catalog-item("bestsellers", "img/man-jacket-2.jpg", "Man in denim jacket", "Jacket", "$ 90")
+          +catalog-item("bestsellers", "img/overalls-2.jpg", "Woman in denim overalls", "Overalls", "$ 160")
         a.bestsellers__btn(href="#") View all
 
     section.main-page__season-collection.season-collection

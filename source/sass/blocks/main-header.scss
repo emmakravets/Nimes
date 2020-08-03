@@ -1,5 +1,31 @@
+.main-header {
+  width: auto;
+}
+
+.main-header__container {
+  @include mobile-container;
+
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+
 .main-header__nav-list {
   @include list-reset;
+
+  max-width: 300px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 15px;
+  padding-top: 20px;
+}
+
+.main-header__nav-item,
+.main-header__user-item {
+  text-align: center;
 }
 
 .main-header__nav-link {
@@ -9,4 +35,10 @@
 
 .main-header__user-list {
   @include list-reset;
+
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 15px;
+  margin-left: 40px;
+  padding-top: 20px;
 }

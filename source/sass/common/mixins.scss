@@ -27,3 +27,8 @@
   font-weight: 500;
   color: $dark-gray-blue;
 }
+
+@mixin mobile-container {
+  margin: 0 auto;
+  padding: 0 15px;
+}

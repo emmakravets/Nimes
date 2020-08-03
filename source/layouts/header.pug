@@ -1,7 +1,7 @@
 header.main-header
   div.main-header__container
     a.main-header__logo.logo
-      img.logo__image(src="http://placehold.it/75x17" width="75" height="17" alt="Nimes Shop Logo")
+      img.logo__image(src="img/header-logo-icon.svg" width="75" height="17" alt="Nimes Shop Logo")
     if ({isButton} === true)
       button.main-header__toggle(type="button" aria-label="Open/close menu")
     nav.main-header__nav
@@ -11,9 +11,9 @@ header.main-header
             a.main-header__nav-link(href=title)= src
     div.main-header__user-nav
       ul.main-header__user-list
-        - const userNavItems = ["Cart", "Search"]
+        - const userNavItems = ["search", "cart"]
           each userNavItem in userNavItems
             li.main-header__user-item
               a.main-header__user-link(href="#")
-                img.main-header__user-icon(src="http://placehold.it/18x16" width="18" height="16")
+                img.main-header__user-icon(src="img/" + userNavItem + "-icon.svg" width="18" height="16")
                 span.visually-hidden= userNavItem

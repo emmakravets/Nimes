@@ -1,9 +1,27 @@
 .website-promo {
+  width: auto;
+
   background-color: $light-gray;
+}
+
+.websilte-promo__container {
+  @include mobile-container;
+
+  width: 100%;
+  padding-top: 100px;
+  padding-bottom: 50px;
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
 }
 
 .website-promo__title {
   @include text-reset;
+
+  grid-row: 2 / 3;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
 
   font-size: 18px;
   font-weight: normal;
@@ -21,4 +39,50 @@
   text-align: center;
   text-transform: uppercase;
   color: $dark-gray-blue;
+}
+
+.website-promo__image-wrapper {
+  position: relative;
+
+  grid-row: 1 / 2;
+  margin: 0 auto;
+
+  &::before,
+  &::after {
+    @include pseudo;
+
+    width: 109px;
+    height: 80px;
+
+    background-image: url("../img/website-promo-bg.svg");
+    background-repeat: no-repeat;
+    background-position: 0 0;
+  }
+
+  &::before {
+    top: -20px;
+    left: -20px;
+
+    transform: scale(-1, 1);
+  }
+
+  &::after {
+    bottom: -20px;
+    right: -20px;
+  }
+}
+
+.website-promo__image {
+  position: relative;
+  z-index: 200;
+}
+
+.website-promo__btn {
+  grid-row: -1 / -2;
+
+  margin-top: 20px;
+}
+
+.website-promo__scroll-down {
+  display: none;
 }
