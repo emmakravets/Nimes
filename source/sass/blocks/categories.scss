@@ -1,9 +1,25 @@
+.categories {
+  width: auto;
+}
+
+.categories__container {
+  @include mobile-container;
+
+  width: 100%;
+  padding-top: 60px;
+}
+
 .categories__title {
   @include title;
 }
 
 .categories__list {
   @include list-reset;
+
+  width: 100%;
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: auto auto;
 }
 
 .categories__name {

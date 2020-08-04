@@ -7,6 +7,7 @@
 
   width: 100%;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .bestsellers__title {
@@ -53,4 +54,7 @@
 
 .bestsellers__btn {
   @include underlined-btn;
+
+  margin: 0 auto;
+  margin-top: 35px;
 }

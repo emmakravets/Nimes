@@ -9,7 +9,7 @@ block content
     section.main-page__promo.website-promo
       div.websilte-promo__container
         h1.website-promo__title The quality you deserve
-          span.promo__title-large Denim
+          span.website-promo__title-large Denim
         div.website-promo__image-wrapper
           img.website-promo__image(src="img/website-promo.jpg" width="202" height="249" alt="Woman in denim jacket")
         a.website-promo__btn.btn(href="#") Check new collection
@@ -28,11 +28,11 @@ block content
         a.bestsellers__btn(href="#") View all
 
     section.main-page__season-collection.season-collection
-      div.season-collection
+      div.season-collection__container
         h2.season-collection__promo-title Street fashion collection
           span.season-collection__title Fall 2020
         a.season-collection__btn.btn(href="#") Shop now
-        img.season-collection__image(src="http://placehold.it/320x226" width="320" height="226" alt="Woman in denim clothes")
+      img.season-collection__image(src="img/collection.jpg" width="320" height="226" alt="Woman and man in denim clothes")
 
     section.main-page__categories.categories
       div.categories__container
@@ -42,10 +42,10 @@ block content
             li.categories__item
               img.categories__image(src=img width="130" height="160" alt=alt)
               a.categories__name(href="#")= title
-          +categories-item("http://placehold.it/130x160", "Woman in denim jeans", "Jeans")
-          +categories-item("http://placehold.it/130x160", "Man in denim shirt", "Shirts")
-          +categories-item("http://placehold.it/130x160", "Woman in denim overalls", "Overalls")
-          +categories-item("http://placehold.it/130x160", "Woman and man in denim jackets", "Jackets")
+          +categories-item("img/woman-jeans-1.jpg", "Woman in denim jeans", "Jeans")
+          +categories-item("img/man-shirts-1.jpg", "Man in denim shirt", "Shirts")
+          +categories-item("img/overalls-3.jpg", "Woman in denim overalls", "Overalls")
+          +categories-item("img/jackets.jpg", "Woman and man in denim jackets", "Jackets")
         a.categories__btn(href="#") View all
   |
   |
