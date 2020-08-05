@@ -7,6 +7,7 @@
 
   width: 100%;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .categories__title {
@@ -18,15 +19,32 @@
 
   width: 100%;
   margin-top: 40px;
-  display: grid;
-  grid-template-columns: auto auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.categories__item {
+  display: flex;
+  flex-direction: column;
+
+  &:first-child,
+  &:nth-child(2) {
+    align-self: flex-start;
+  }
 }
 
 .categories__name {
+  margin-top: 12px;
+
   font-weight: 500;
   color: $dark-gray-blue;
 }
 
 .categories__btn {
   @include underlined-btn;
+
+  margin: 0 auto;
+  margin-top: 40px;
 }

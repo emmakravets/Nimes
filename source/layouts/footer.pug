@@ -1,7 +1,7 @@
 footer.main-footer
   div.main-footer__container
     a.main-footer__logo.logo
-      img.logo__image(src="http://placehold.it/75x17" width="75" height="17" alt="Nimes Shop Logo")
+      img.logo__image(src="img/footer-logo-icon.svg" width="75" height="17" alt="Nimes Shop Logo")
     nav.main-footer__nav
       ul.main-footer__nav-list
         - const footerList = ["Shop", "Delivery", "Sitemap", "Service", "Contacts"]
@@ -9,11 +9,11 @@ footer.main-footer
             li.main-footer__nav-item
               a.main-footer__nav-link(href="#")= item
     ul.main-footer__social.social
-      mixin social-item(title, width, height)
+      mixin social-item(title, src, width, height)
         li.social__item
           a.social__link(href="#" aria-label="Nimes in " + title)
-            img.social__icon(class="social__icon--" + title src="http://placehold.it/11x20" width=width height=height)
-      +social-item("facebook", "11", "20")
-      +social-item("instagram", "20", "20")
-      +social-item("pinterest", "20", "20")
-      +social-item("twitter", "20", "16")
+            img.social__icon(class="social__icon--" + title src=src width=width height=height)
+      +social-item("facebook", "img/facebook-icon.svg", "11", "20")
+      +social-item("instagram", "img/instagram-icon.svg", "20", "20")
+      +social-item("pinterest", "img/pinterest-icon.svg", "20", "20")
+      +social-item("twitter", "img/twitter-icon.svg", "20", "16")

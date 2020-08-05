@@ -38,14 +38,14 @@ block content
       div.categories__container
         h2.categories__title Shop by category
         ul.categories__list
-          mixin categories-item(img, alt, title)
+          mixin categories-item(img, alt, title, height)
             li.categories__item
-              img.categories__image(src=img width="130" height="160" alt=alt)
+              img.categories__image(src=img width="130" height=height alt=alt)
               a.categories__name(href="#")= title
-          +categories-item("img/woman-jeans-1.jpg", "Woman in denim jeans", "Jeans")
-          +categories-item("img/man-shirts-1.jpg", "Man in denim shirt", "Shirts")
-          +categories-item("img/overalls-3.jpg", "Woman in denim overalls", "Overalls")
-          +categories-item("img/jackets.jpg", "Woman and man in denim jackets", "Jackets")
+          +categories-item("img/woman-jeans-1.jpg", "Woman in denim jeans", "Jeans", "160")
+          +categories-item("img/man-shirts-1.jpg", "Man in denim shirt", "Shirts", "126")
+          +categories-item("img/overalls-3.jpg", "Woman in denim overalls", "Overalls", "126")
+          +categories-item("img/jackets.jpg", "Woman and man in denim jackets", "Jackets", "160")
         a.categories__btn(href="#") View all
   |
   |
