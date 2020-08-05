@@ -1,9 +1,31 @@
 .main-footer {
+  width: auto;
+
   background-color: $dark-gray-blue;
+}
+
+.main-footer__container {
+  @include mobile-container;
+
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 52px;
+
+  display: grid;
+  grid-template-rows: 2fr 1fr;
 }
 
 .main-footer__nav-list {
   @include list-reset;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 50px;
+  row-gap: 25px;
+}
+
+.main-footer__logo {
+  padding-bottom: 0;
 }
 
 .main-footer__nav-link {
@@ -11,4 +33,9 @@
   font-weight: 500;
   line-height: 21px;
   color: $white;
+
+}
+
+.main-footer__social {
+  margin-top: 35px;
 }
