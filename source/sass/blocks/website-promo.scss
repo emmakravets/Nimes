@@ -4,7 +4,7 @@
   background-color: $light-gray;
 }
 
-.websilte-promo__container {
+.website-promo__container {
   @include mobile-container;
 
   width: 100%;
@@ -85,4 +85,8 @@
 
 .website-promo__scroll-down {
   display: none;
+}
+
+@media (min-width: $tablet-width) {
+
 }

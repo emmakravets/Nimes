@@ -42,3 +42,33 @@
   margin-left: 40px;
   padding-top: 20px;
 }
+
+@media (min-width: $tablet-width) {
+  .main-header__container {
+    @include tablet-container;
+
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
+
+  .main-header__nav-list,
+  .main-header__user-list {
+    padding-top: 45px;
+  }
+
+  .main-header__nav-list {
+    max-width: auto;
+    display: flex;
+  }
+
+  .main-header__nav-item {
+    margin-right: 35px;
+  }
+
+  .main-header__user-list {
+    max-width: 100px;
+    gap: 0;
+    margin: 0;
+    margin-left: auto;
+  }
+}
