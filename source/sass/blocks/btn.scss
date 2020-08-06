@@ -13,3 +13,10 @@
   background-color: $dark-gray-blue;
   border: none;
 }
+
+@media (min-width: $tablet-width) {
+  .btn {
+    width: 58%;
+    padding: 23px 24px;
+  }
+}
