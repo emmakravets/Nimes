@@ -93,7 +93,7 @@
     @include tablet-container;
 
     padding-top: 100px;
-    padding-bottom: 15px;
+    padding-bottom: 45px;
 
     grid-template-areas:
       "title image"
@@ -139,8 +139,8 @@
 
   .website-promo__image-wrapper,
   .website-promo__image {
-    width: 264px; /* temporally */
-    height: 319px; /* temporally */
+    width: 264px;
+    height: 319px;
   }
 
   .website-promo__btn {
@@ -153,9 +153,9 @@
     justify-content: center;
     align-items: center;
     width: 27px;
-    height: 27px;
+    height: 30px;
     padding: 0;
-    margin-top: 53px;
+    margin-top: 23px;
 
     background-color: transparent;
     background-image: url("../img/scroll-down.svg");

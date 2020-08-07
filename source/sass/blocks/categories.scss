@@ -48,3 +48,9 @@
   margin: 0 auto;
   margin-top: 40px;
 }
+
+@media (min-width: $tablet-width) {
+  .categories__image {
+    width: 324px;
+  }
+}

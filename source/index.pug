@@ -11,7 +11,11 @@ block content
         h1.website-promo__title The quality you deserve
           span.website-promo__title-large Denim
         div.website-promo__image-wrapper
-          img.website-promo__image(src="img/website-promo.jpg" width="202" height="249" alt="Woman in denim jacket")
+          picture
+            source(type="image/webp" media="(min-width: 768px)" srcset="img/website-promo-tablet.webp")
+            source(type="image/webp" srcset="img/website-promo-mobile.webp")
+            source(media="(min-width: 768px)" srcset="img/website-promo-tablet.jpg")
+            img.website-promo__image(src="img/website-promo-mobile.jpg" width="202" height="249" alt="Woman in denim jacket")
         a.website-promo__btn.btn(href="#") Check new collection
         button.website-promo__scroll-down(type="button" aria-label="Scroll page down")
         div.website-promo__social
@@ -23,10 +27,10 @@ block content
         h2.bestsellers__title Bestsellers
         include ./layouts/catalog-mixins
         ul.bestsellers__list
-          +catalog-item("bestsellers", "img/man-jacket-1.jpg", "Man in denim jacket", "Jacket", "$ 120")
-          +catalog-item("bestsellers", "img/overalls-1.jpg", "Woman in denim overalls", "Overalls", "$ 140")
-          +catalog-item("bestsellers", "img/man-jacket-2.jpg", "Man in denim jacket", "Jacket", "$ 90")
-          +catalog-item("bestsellers", "img/overalls-2.jpg", "Woman in denim overalls", "Overalls", "$ 160")
+          +catalog-item("bestsellers", "img/man-jacket-1", "Man in denim jacket", "Jacket", "$ 120")
+          +catalog-item("bestsellers", "img/overalls-1", "Woman in denim overalls", "Overalls", "$ 140")
+          +catalog-item("bestsellers", "img/man-jacket-2", "Man in denim jacket", "Jacket", "$ 90")
+          +catalog-item("bestsellers", "img/overalls-2", "Woman in denim overalls", "Overalls", "$ 160")
         a.bestsellers__btn(href="#") View all
 
     section.main-page__season-collection.season-collection
@@ -34,7 +38,11 @@ block content
         h2.season-collection__promo-title Street fashion collection
           span.season-collection__title Fall 2020
         a.season-collection__btn.btn(href="#") Shop now
-      img.season-collection__image(src="img/collection.jpg" width="320" height="226" alt="Woman and man in denim clothes")
+        picture
+          source(type="image/webp" media="(min-width: 768px)" srcset="img/collection-tablet.webp")
+          source(type="image/webp" srcset="img/collection-mobile.webp")
+          source(media="(min-width: 768px)" srcset="img/collection-tablet.jpg")
+          img.season-collection__image(src="img/collection-mobile.jpg" width="320" height="226" alt="Woman and man in denim clothes")
 
     section.main-page__categories.categories
       div.categories__container
@@ -42,12 +50,16 @@ block content
         ul.categories__list
           mixin categories-item(img, alt, title, height)
             li.categories__item
-              img.categories__image(src=img width="130" height=height alt=alt)
+              picture
+                source(type="image/webp" media="(min-width: 768px)" srcset=img + "-tablet.webp")
+                source(type="image/webp" srcset=img + "-mobile.webp")
+                source(media="(min-width: 768px)" srcset=img + "-tablet.jpg")
+                img.categories__image(src=img + "-mobile.jpg" width="130" height=height alt=alt)
               a.categories__name(href="#")= title
-          +categories-item("img/woman-jeans-1.jpg", "Woman in denim jeans", "Jeans", "160")
-          +categories-item("img/man-shirts-1.jpg", "Man in denim shirt", "Shirts", "126")
-          +categories-item("img/overalls-3.jpg", "Woman in denim overalls", "Overalls", "126")
-          +categories-item("img/jackets.jpg", "Woman and man in denim jackets", "Jackets", "160")
+          +categories-item("img/woman-jeans-1", "Woman in denim jeans", "Jeans", "160")
+          +categories-item("img/man-shirts-1", "Man in denim shirt", "Shirts", "126")
+          +categories-item("img/overalls-3", "Woman in denim overalls", "Overalls", "126")
+          +categories-item("img/jackets", "Woman and man in denim jackets", "Jackets", "160")
         a.categories__btn(href="#") View all
   |
   |

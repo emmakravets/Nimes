@@ -21,6 +21,11 @@
   font-size: 26px;
   line-height: 30px;
   font-weight: bold;
+
+  @media (min-width: $tablet-width) {
+    font-size: 28px;
+    line-height: 33px;
+  }
 }
 
 @mixin underlined-btn {
@@ -44,6 +49,17 @@
     height: 2px;
 
     background-color: $dark-gray-blue;
+  }
+
+  @media (min-width: $tablet-width) {
+    width: 50%;
+
+    font-size: 18px;
+    line-height: 21px;
+
+    &::after {
+      bottom: 3px;
+    }
   }
 }
 
