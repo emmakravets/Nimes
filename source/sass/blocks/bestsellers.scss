@@ -60,27 +60,7 @@
 }
 
 @media (min-width: $tablet-width) {
-  .bestsellers__container {
-    @include tablet-container;
-
-    padding-top: 100px;
-    padding-bottom: 100px;
-
-    display: grid;
-    grid-template-columns: 3fr 1fr;
-    grid-template-rows: auto 1fr;
-  }
-
-  .bestsellers__title {
-    grid-column: 1 / 2;
-    grid-row: 1 / 2;
-  }
-
-  .bestsellers__list {
-    grid-column: 1 / -1;
-    grid-row: 2 / -1;
-    margin-top: 60px;
-  }
+  @include tablet-grid(bestsellers);
 
   .bestsellers__card-title,
   .bestsellers__card-price  {
@@ -99,12 +79,5 @@
   .bestsellers__card-image {
     width: 324px;
     height: 349px;
-  }
-
-  .bestsellers__btn {
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-    margin: 0;
-    margin-left: auto;
   }
 }

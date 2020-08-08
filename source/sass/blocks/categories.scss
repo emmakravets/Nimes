@@ -50,7 +50,16 @@
 }
 
 @media (min-width: $tablet-width) {
+  @include tablet-grid(categories);
+
   .categories__image {
     width: 324px;
+  }
+
+  .categories__name {
+    margin-top: 15px;
+
+    font-size: 18px;
+    line-height: 21px;
   }
 }

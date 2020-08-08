@@ -72,3 +72,34 @@
   margin: 0 auto;
   padding: 0 45px;
 }
+
+@mixin tablet-grid($title) {
+  .#{$title}__container {
+    @include tablet-container;
+
+    padding-top: 100px;
+    padding-bottom: 100px;
+
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .#{$title}__title {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+  }
+
+  .#{$title}__list {
+    grid-column: 1 / -1;
+    grid-row: 2 / -1;
+    margin-top: 60px;
+  }
+
+  .#{$title}__btn {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    margin: 0;
+    margin-left: auto;
+  }
+}
