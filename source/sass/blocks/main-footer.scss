@@ -33,9 +33,64 @@
   font-weight: 500;
   line-height: 21px;
   color: $white;
-
+  text-transform: capitalize;
 }
 
 .main-footer__social {
   margin-top: 35px;
+}
+
+@media (min-width: $tablet-width) {
+  .main-footer__container  {
+    @include tablet-container;
+
+    padding-top: 50px;
+    padding-bottom: 52px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .main-footer__nav-list {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .main-footer__nav-item {
+    text-align: center;
+
+    &--logo {
+      width: 100%;
+      padding-bottom: 35px;
+    }
+
+    &--shop {
+      order: 1;
+    }
+
+    &--delivery {
+      order: 2;
+    }
+
+    &--service {
+      order: 3;
+    }
+
+    &--sitemap {
+      order: 4;
+    }
+
+    &--contacts {
+      order: 5;
+    }
+  }
+
+  .main-footer__social {
+    margin: 0 auto;
+    margin-top: 40px;
+  }
 }

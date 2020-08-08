@@ -2,13 +2,13 @@ footer.main-footer
   div.main-footer__container
     nav.main-footer__nav
       ul.main-footer__nav-list
-        li.main-footer__nav-item
+        li.main-footer__nav-item.main-footer__nav-item--logo
           a.main-footer__logo.logo
             img.logo__image(src="img/footer-logo-icon.svg" width="75" height="17" alt="Nimes Shop Logo")
-        - const footerList = ["Sitemap", "Shop", "Service", "Delivery", "Contacts"]
+        - const footerList = ["sitemap", "shop", "service", "delivery", "contacts"]
           each item in footerList
-            li.main-footer__nav-item
-              a.main-footer__nav-link(href="#")= item
+            li.main-footer__nav-item(class="main-footer__nav-item--" + item)
+              a.main-footer__nav-link( href="#")= item
     ul.main-footer__social.social
       mixin social-item(title, src, width, height)
         li.social__item
