@@ -73,6 +73,11 @@
   padding: 0 45px;
 }
 
+@mixin desktop-container {
+  margin: 0 auto;
+  padding: 0 98px;
+}
+
 @mixin tablet-grid($title) {
   .#{$title}__container {
     @include tablet-container;

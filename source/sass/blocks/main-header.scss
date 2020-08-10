@@ -72,3 +72,33 @@
     margin-left: auto;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .main-header__container {
+    @include desktop-container;
+
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
+
+  .main-header__nav-list,
+  .main-header__user-list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-top: 50px;
+  }
+
+  .main-header__nav-item,
+  .main-header__user-item {
+    margin-bottom: 30px;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  .main-header__user-list {
+    align-items: flex-end;
+  }
+}
