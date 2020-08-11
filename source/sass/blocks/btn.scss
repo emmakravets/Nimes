@@ -20,3 +20,10 @@
     padding: 23px 24px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .btn {
+    width: 40%;
+    padding: 23px 0;
+  }
+}
