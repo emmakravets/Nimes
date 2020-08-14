@@ -119,3 +119,33 @@
     margin: 0;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .season-collection__container {
+    @include desktop-container;
+
+    padding-right: 188px;
+
+    &::before {
+      right: 98px;
+    }
+  }
+
+  .season-collection__image {
+    min-width: 700px;
+    height: 370px;
+  }
+
+  .season-collection__info {
+    padding: 70px 0 70px 70px;
+  }
+
+  .season-collection__title {
+    margin-top: 15px;
+  }
+
+  .season-collection__btn {
+    width: 55%;
+    margin-top: 50px;
+  }
+}

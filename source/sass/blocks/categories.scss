@@ -63,3 +63,25 @@
     line-height: 21px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .categories__container {
+    @include desktop-container;
+
+    padding-top: 130px;
+    padding-bottom: 130px;
+  }
+
+  .categories__list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    gap: 30px;
+    margin-top: 70px;
+    align-items: flex-start;
+  }
+
+  .categories__image {
+    width: 270px;
+  }
+}
+

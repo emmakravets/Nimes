@@ -26,6 +26,11 @@
     font-size: 28px;
     line-height: 33px;
   }
+
+  @media (min-width: $desktop-width) {
+    font-size: 32px;
+    line-height: 38px;
+  }
 }
 
 @mixin underlined-btn {
@@ -60,6 +65,10 @@
     &::after {
       bottom: 3px;
     }
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 30%;
   }
 }
 

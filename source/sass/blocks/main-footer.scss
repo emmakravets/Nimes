@@ -94,3 +94,12 @@
     margin-top: 40px;
   }
 }
+
+@media (min-width: $desktop-width) {
+  .main-footer__container {
+    @include desktop-container;
+
+    padding-top: 50px;
+    padding-bottom: 52px;
+  }
+}

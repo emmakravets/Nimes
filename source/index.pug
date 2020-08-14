@@ -15,6 +15,7 @@ block content
             source(type="image/webp" media="(min-width: 1320px)" srcset="img/website-promo-desktop.webp")
             source(type="image/webp" media="(min-width: 768px)" srcset="img/website-promo-tablet.webp")
             source(type="image/webp" srcset="img/website-promo-mobile.webp")
+            source(media="(min-width: 1320px)" srcset="img/website-promo-desktop.jpg")
             source(media="(min-width: 768px)" srcset="img/website-promo-tablet.jpg")
             img.website-promo__image(src="img/website-promo-mobile.jpg" width="202" height="249" alt="Woman in denim jacket")
         a.website-promo__btn.btn(href="#") Check new collection
@@ -41,8 +42,10 @@ block content
             span.season-collection__title Fall 2020
           a.season-collection__btn.btn(href="#") Shop now
         picture
+          source(type="image/webp" media="(min-width: 1320px)" srcset="img/collection-desktop.webp")
           source(type="image/webp" media="(min-width: 768px)" srcset="img/collection-tablet.webp")
           source(type="image/webp" srcset="img/collection-mobile.webp")
+          source(media="(min-width: 1320px)" srcset="img/collection-desktop.jpg")
           source(media="(min-width: 768px)" srcset="img/collection-tablet.jpg")
           img.season-collection__image(src="img/collection-mobile.jpg" width="320" height="226" alt="Woman and man in denim clothes")
 
@@ -53,8 +56,10 @@ block content
           mixin categories-item(img, alt, title, height)
             li.categories__item
               picture
+                source(type="image/webp" media="(min-width: 1320px)" srcset=img + "-desktop.webp")
                 source(type="image/webp" media="(min-width: 768px)" srcset=img + "-tablet.webp")
-                source(type="image/webp" srcset=img + "-mobile.webp")
+                source(type="image/webp" srcset=img +"-mobile.webp")
+                source(media="(min-width: 1320px)" srcset=img + "-desktop.jpg")
                 source(media="(min-width: 768px)" srcset=img + "-tablet.jpg")
                 img.categories__image(src=img + "-mobile.jpg" width="130" height=height alt=alt)
               a.categories__name(href="#")= title
