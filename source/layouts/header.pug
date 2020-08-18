@@ -2,8 +2,9 @@ header.main-header
   div.main-header__container
     a.main-header__logo.logo
       img.logo__image(src="img/header-logo-icon.svg" width="75" height="17" alt="Nimes Shop Logo")
-    if ({isButton} === true)
-      button.main-header__toggle(type="button" aria-label="Open/close menu")
+    if (isButton === true)
+      div.main-header__toggle-wrapper
+        button.main-header__toggle(type="button" aria-label="Open/close menu")
     nav.main-header__nav
       ul.main-header__nav-list
         each title, src in {'Woman': 'catalog.html', 'Man': 'catalog-man.html', 'New': 'catalog-new.html'}
