@@ -52,6 +52,30 @@
   line-height: 16px;
 }
 
+.catalog__controls {
+  margin-top: 50px;
+  text-align: center;
+}
+
 .catalog__controls-text {
   @include text-reset;
+}
+
+.catalog__controls-range {
+  display: block;
+  padding: 0;
+  width: 60%;
+  height: 2px;
+  margin: 0 auto;
+  margin-top: 13px;
+
+  background-color: $super-light-gray;
+  border: none;
+  cursor: pointer;
+}
+
+.catalog__btn {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
 }

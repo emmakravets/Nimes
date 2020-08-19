@@ -1,20 +1,37 @@
 header.main-header
-  div.main-header__container
-    a.main-header__logo.logo
-      img.logo__image(src="img/header-logo-icon.svg" width="75" height="17" alt="Nimes Shop Logo")
-    if (isButton === true)
+  if (isButton === true)
+    div.main-header__container.main-header__container--with-burger
+      a.main-header__logo.logo.logo--with-burger
+        img.logo__image(src="img/header-logo-icon.svg" width="75" height="17" alt="Nimes Shop Logo")
       div.main-header__toggle-wrapper
         button.main-header__toggle(type="button" aria-label="Open/close menu")
-    nav.main-header__nav
-      ul.main-header__nav-list
-        each title, src in {'Woman': 'catalog.html', 'Man': 'catalog-man.html', 'New': 'catalog-new.html'}
-          li.main-header__nav-item
-            a.main-header__nav-link(href=title)= src
-    div.main-header__user-nav
-      ul.main-header__user-list
-        - const userNavItems = ["search", "cart"]
-          each userNavItem in userNavItems
-            li.main-header__user-item
-              a.main-header__user-link(href="#")
-                img.main-header__user-icon(src="img/" + userNavItem + "-icon.svg" width="18" height="16")
-                span.visually-hidden= userNavItem
+      nav.main-header__nav.main-header__nav--with-burger.main-header__nav--closed
+        ul.main-header__nav-list
+          each title, src in {'Woman': 'catalog.html', 'Man': 'catalog-man.html', 'New': 'catalog-new.html'}
+            li.main-header__nav-item
+              a.main-header__nav-link(href=title)= src
+      div.main-header__user-nav.main-header__user-nav--with-burger
+        ul.main-header__user-list
+          - const userNavItems = ["search", "cart"]
+            each userNavItem in userNavItems
+              li.main-header__user-item
+                a.main-header__user-link(href="#")
+                  img.main-header__user-icon(src="img/" + userNavItem + "-icon.svg" width="18" height="16")
+                  span.visually-hidden= userNavItem
+  else if (isButton === false)
+    div.main-header__container
+      a.main-header__logo.logo
+        img.logo__image(src="img/header-logo-icon.svg" width="75" height="17" alt="Nimes Shop Logo")
+      nav.main-header__nav
+        ul.main-header__nav-list
+          each title, src in {'Woman': 'catalog.html', 'Man': 'catalog-man.html', 'New': 'catalog-new.html'}
+            li.main-header__nav-item
+              a.main-header__nav-link(href=title)= src
+      div.main-header__user-nav
+        ul.main-header__user-list
+          - const userNavItems = ["search", "cart"]
+            each userNavItem in userNavItems
+              li.main-header__user-item
+                a.main-header__user-link(href="#")
+                  img.main-header__user-icon(src="img/" + userNavItem + "-icon.svg" width="18" height="16")
+                  span.visually-hidden= userNavItem

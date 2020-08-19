@@ -85,20 +85,26 @@ block content
 
         include ./layouts/catalog-mixins
         ul.catalog__list
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 40")
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 70")
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 60")
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 50")
+          +catalog-item("catalog", "img/woman-jacket-1", "Woman in denim jacket", "Jacket", "$ 40")
+          +catalog-item("catalog", "img/woman-jacket-2", "Woman in denim jacket", "Jacket", "$ 70")
+          +catalog-item("catalog", "img/woman-jacket-3", "Woman in denim jacket", "Jacket", "$ 60")
+          +catalog-item("catalog", "img/woman-jacket-4", "Woman in denim jacket", "Jacket", "$ 50")
           li.catalog__card.catalog__card-large
             a.catalog__card-title(href="#") Jacket
-            img.catalog__card-image(src="http://placehold.it/290x442" width="290" height="442" alt="Woman in denim jacket")
+            picture
+              source(type="image/webp" media="(min-width: 1320px)" srcset="img/woman-jacket-5-desktop.webp")
+              source(type="image/webp" media="(min-width: 768px)" srcset="img/woman-jacket-5-tablet.webp")
+              source(type="image/webp" srcset="img/woman-jacket-5-mobile.webp")
+              source(media="(min-width: 1320px)" srcset="img/woman-jacket-5-desktop.jpg")
+              source(media="(min-width: 768px)" srcset="img/woman-jacket-5-tablet.jpg")
+              img.season-collection__image(src="img/woman-jacket-5-mobile.jpg" width="290" height="442" alt="Woman in denim jacket")
             p.catalog__card-price $ 160
           |
           |
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 40")
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 110")
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 35")
-          +catalog-item("catalog", "http://placehold.it/130x160", "Woman in denim jacket", "Jacket", "$ 85")
+          +catalog-item("catalog", "img/woman-jacket-6", "Woman in denim jacket", "Jacket", "$ 40")
+          +catalog-item("catalog", "img/woman-jacket-7", "Woman in denim jacket", "Jacket", "$ 110")
+          +catalog-item("catalog", "img/woman-jacket-8", "Woman in denim jacket", "Jacket", "$ 35")
+          +catalog-item("catalog", "img/woman-jacket-9", "Woman in denim jacket", "Jacket", "$ 85")
 
         div.catalog__controls
           p.catalog__controls-text Showing 9 of 45 items
