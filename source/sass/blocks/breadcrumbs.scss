@@ -1,5 +1,37 @@
 .breadcrumbs {
   @include list-reset;
+
+  width: auto;
+  display: flex;
+}
+
+.breadcrumbs__item {
+  position: relative;
+
+  margin-right: 30px;
+
+  &::after {
+    position: absolute;
+    content: "/";
+
+    top: 2px;
+    right: -20px;
+
+    width: 9px;
+    height: 13px;
+
+    color: $gray;
+  }
+
+  &--mobile-hidden {
+    display: none;
+  }
+
+  &--active {
+    &::after {
+      display: none;
+    }
+  }
 }
 
 .breadcrumbs__link {
@@ -7,10 +39,6 @@
   font-weight: 500;
   line-height: 21px;
   color: $gray;
-
-  &--mobile-hidden {
-    display: none;
-  }
 
   &--active {
     color: $dark-gray-blue;

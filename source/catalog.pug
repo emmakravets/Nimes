@@ -5,7 +5,7 @@ block content
 
   mixin filter-button(name)
     button.filters__category-toggle.filters__category-toggle--closed(type="button" aria-label="Open/Close " + name + " filter")
-      span.filters__name name
+      span.filters__name= name
       span.filters__toggle-icon
 
   mixin filter-category(categoryName, filterName)
@@ -24,11 +24,11 @@ block content
     section.main-page__catalog-promo.catalog-promo
       div.catalog-promo__container
         ul.catalog-promo__breadcrumbs.breadcrumbs
-          li.breadcrumbs__item
-            a.breadcrumbs__link.breadcrumbs__link--mobile-hidden(href="#") All categories
+          li.breadcrumbs__item.breadcrumbs__item--mobile-hidden
+            a.breadcrumbs__link(href="#") All categories
           li.breadcrumbs__item
             a.breadcrumbs__link(href="#") Woman
-          li.breadcrumbs__item
+          li.breadcrumbs__item.breadcrumbs__item--active
             a.breadcrumbs__link.breadcrumbs__link--active Jackets
         h1.catalog-promo__title Denim Collection Fall 2020
         img.catalog-promo__image(src="http://placehold.it/299x260" width="299" height="260" alt="Denim jacket patch")
@@ -39,9 +39,9 @@ block content
         section.catalog__filters.filters
           h3.visually-hidden Filters
 
-          form.catalog__form(action="#" method="post")
+          form.filters__form(action="#" method="post")
             button.filters__main-toggle.filters__main-toggle--closed(type="button" aria-label="Open/Close filters")
-              span.filters__title Filter by
+              span.filters__toggle-title Filter by
               span.filters__toggle-icon
 
             button.filters__clear-btn(type="reset") Clear all
@@ -64,7 +64,7 @@ block content
                     span.Pull right
 
               fieldset.filters__category
-                +filter-button(Color)
+                +filter-button("Color")
                 div.filters__colors-wrap
                   +filter-category("color", "blue-gray")
                   +filter-category("color", "blue")
@@ -74,7 +74,7 @@ block content
                   +filter-category("color", "bright-blue")
 
               fieldset.filters__category
-                +filter-button(Collection)
+                +filter-button("Collection")
                 div.filters__collection
                   +filter-category("collection", "casual")
                   +filter-category("collection", "petite")

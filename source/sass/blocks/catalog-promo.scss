@@ -1,3 +1,15 @@
 .catalog-promo {
+  width: auto;
+}
+
+.catalog-promo__container {
+  @include mobile-container;
+
+  width: 100%;
+  padding-top: 10px;
+}
+
+.catalog-promo__title,
+.catalog-promo__image {
   display: none;
 }

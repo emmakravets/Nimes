@@ -1,7 +1,66 @@
-.filters__title {
+.filters {
+  width: auto;
+}
+
+.filters__main-toggle {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  padding: 13px 13px;
+
+  background-color: $white;
+  border: none;
+  border: 2px solid $dark-gray-blue;
+  cursor: pointer;
+}
+
+.filters__toggle-title {
   font-size: 18px;
   font-weight: 500;
   line-height: 21px;
+}
+
+.filters__toggle-icon {
+  position: relative;
+
+  display: block;
+  width: 16px;
+  height: 8px;
+  padding: 0;
+
+  &::after,
+  &::before {
+    @include pseudo;
+
+    top: 3px;
+
+    width: 12px;
+    height: 2px;
+
+    background-color: $dark-gray-blue;
+  }
+
+  &::before {
+    left: 0;
+    transform: rotate(-45deg);
+  }
+
+  &::after {
+    left: -8px;
+    transform: rotate(45deg);
+  }
+}
+
+.filters__categories,
+.filters__clear-btn,
+.filters__btn {
+  display: none;
+}
+
+.filters__category {
+  border: none;
 }
 
 .filters__clear-btn,
