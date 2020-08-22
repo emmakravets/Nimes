@@ -5,8 +5,8 @@ block content
 
   mixin filter-button(name)
     button.filters__category-toggle.filters__category-toggle--closed(type="button" aria-label="Open/Close " + name + " filter")
-      span.filters__name= name
-      span.filters__toggle-icon
+      span.filters__category-name= name
+      span.filters__category-toggle-icon
 
   mixin filter-category(categoryName, filterName)
     input.visually-hidden(class="filters__" + categoryName + "-input filters__" + categoryName + "-input--" + filterName
@@ -44,7 +44,10 @@ block content
               span.filters__toggle-title Filter by
               span.filters__toggle-icon
 
-            button.filters__clear-btn(type="reset") Clear all
+            div.filters__header
+              button.filters__clear-btn(type="reset") Clear all
+              span.filters__header-title Filters
+              button.filters__close-btn(type="button") Close
 
             section.filters__categories
               h4.visually-hidden Filters categories
@@ -61,7 +64,7 @@ block content
                   div.range-controls__toggle.range-controls__toggle--left
                     span.visually-hidden Pull left
                   div.range-controls__toggle.range-controls__toggle--right
-                    span.Pull right
+                    span.visually-hidden Pull right
 
               fieldset.filters__category
                 +filter-button("Color")

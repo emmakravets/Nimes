@@ -2,6 +2,10 @@
   width: auto;
 }
 
+.filters__form {
+  padding-bottom: 25px;
+}
+
 .filters__main-toggle {
   width: 100%;
   display: flex;
@@ -16,51 +20,115 @@
   cursor: pointer;
 }
 
-.filters__toggle-title {
+.filters__toggle-title,
+.filters__header-title,
+.filters__category-name,
+.filters__clear-btn,
+.filters__close-btn {
+  font-family: "Work Sans", "Arial", sans-serif;
   font-size: 18px;
   font-weight: 500;
   line-height: 21px;
+  color: $dark-gray-blue;
 }
 
 .filters__toggle-icon {
+  @include closed-icon;
+}
+
+.filters__header {
   position: relative;
 
-  display: block;
-  width: 16px;
-  height: 8px;
-  padding: 0;
-
-  &::after,
-  &::before {
-    @include pseudo;
-
-    top: 3px;
-
-    width: 12px;
-    height: 2px;
-
-    background-color: $dark-gray-blue;
-  }
-
-  &::before {
-    left: 0;
-    transform: rotate(-45deg);
-  }
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-top: 25px;
+  padding-bottom: 25px;
 
   &::after {
-    left: -8px;
-    transform: rotate(45deg);
+    @include pseudo;
+
+    bottom: 0;
+    left: -15px;
+
+    width: 110%;
+    height: 2px;
+
+    background-color: $light-gray;
   }
 }
 
+// временно
 .filters__categories,
-.filters__clear-btn,
+.filters__header,
 .filters__btn {
   display: none;
 }
 
+.filters__header-title {
+  font-weight: bold;
+}
+
 .filters__category {
+  margin: 0;
+  padding: 0;
+
   border: none;
+}
+
+.filters__price,
+.filters__colors-wrap,
+.filters__collection {
+  display: none;
+}
+
+.filters__category-toggle {
+  position: relative;
+
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+
+  background-color: $white;
+  border: none;
+  cursor: pointer;
+
+  &--closed {
+    &::before {
+      @include pseudo;
+
+      bottom: 0;
+      left: -15px;
+
+      width: 110%;
+      height: 2px;
+
+      background-color: $light-gray;
+    }
+  }
+}
+
+.filters__clear-btn,
+.filters__close-btn {
+  display: block;
+  padding: 0;
+
+  font-size: 14px;
+  line-height: 16px;
+
+  background-color: transparent;
+  border: none;
+}
+
+.filters__category-name {
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.filters__category-toggle-icon {
+  @include closed-icon;
 }
 
 .filters__clear-btn,
@@ -68,10 +136,6 @@
 .filters__collection-title {
   font-size: 14px;
   line-height: 16px;
-}
-
-.filters__clear-btn {
-  font-weight: 500;
 }
 
 .filters__name {
