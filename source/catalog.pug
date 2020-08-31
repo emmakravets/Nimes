@@ -6,7 +6,7 @@ block content
   mixin filter-button(name)
     button.filters__category-toggle.filters__category-toggle--closed(type="button" aria-label="Open/Close " + name + " filter")
       span.filters__category-name= name
-      span.filters__category-toggle-icon
+      span.filters__category-toggle-icon.filters__category-toggle-icon--closed
 
   mixin filter-category(categoryName, filterName)
     input.visually-hidden(class="filters__" + categoryName + "-input filters__" + categoryName + "-input--" + filterName

@@ -118,7 +118,7 @@
   }
 }
 
-@mixin closed-icon {
+@mixin arrow-icon {
   position: relative;
 
   display: block;
@@ -138,13 +138,27 @@
     background-color: $dark-gray-blue;
   }
 
-  &::before {
-    left: 0;
-    transform: rotate(-45deg);
+  &--closed {
+    &::before {
+      left: 0;
+      transform: rotate(-45deg);
+    }
+
+    &::after {
+      left: -8px;
+      transform: rotate(45deg);
+    }
   }
 
-  &::after {
-    left: -8px;
-    transform: rotate(45deg);
+  &--opened {
+    &::before {
+      left: 0;
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      left: -8px;
+      transform: rotate(-45deg);
+    }
   }
 }
