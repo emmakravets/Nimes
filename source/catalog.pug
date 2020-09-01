@@ -10,9 +10,12 @@ block content
 
   mixin filter-category(categoryName, filterName)
     input.visually-hidden(class="filters__" + categoryName + "-input filters__" + categoryName + "-input--" + filterName
-      id=categoryName + "-" + filterName type="radio" name=categoryName value=filterName)
-    label(class="filters__" + categoryName + " filters__" + categoryName + "--" + filterName for=categoryName + "-" + filterName)
-      span.visually-hidden= filterName
+      id=categoryName + "-" + filterName type="checkbox" name=categoryName + "-" + filterName value=filterName)
+    label(class="filters__" + categoryName + "-label filters__" + categoryName + "-label--" + filterName for=categoryName + "-" + filterName)
+      if (categoryName === "color")
+        span.visually-hidden= filterName
+      else if (categoryName === "collection")
+        span= filterName
     |
     |
 
@@ -42,7 +45,7 @@ block content
           form.filters__form(action="#" method="post")
             button.filters__main-toggle.filters__main-toggle--closed(type="button" aria-label="Open/Close filters")
               span.filters__toggle-title Filter by
-              span.filters__toggle-icon
+              span.filters__toggle-icon.filters__toggle-icon--closed
 
             div.filters__header
               button.filters__clear-btn(type="reset") Clear all
