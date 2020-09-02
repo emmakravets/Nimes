@@ -56,18 +56,15 @@ block content
               h4.visually-hidden Filters categories
               fieldset.filters__category
                 +filter-button("Price")
-                div.filters__price
-                  input.filters__price-input.filters__price-input--left(type="text" name="min-price" value="$40" aria-label="Min price")
-                  label.filters__price-count $ 40
-                  input.filters__price-input.filters__price-input--right(type="text" name="max-price" value="$240" aria-label="Max price")
-                  label.filters__price-count $ 240
                 div.filters__price-range.range-controls
-                  div.range-controls__scale
+                  div.range-controls__line
                     div.range-controls__bar
-                  div.range-controls__toggle.range-controls__toggle--left
-                    span.visually-hidden Pull left
-                  div.range-controls__toggle.range-controls__toggle--right
-                    span.visually-hidden Pull right
+
+                    label.range-controls__price.range-controls__price--left(for="price-smaller") $ 40
+                      input.range-controls__toggle.range-controls__toggle--left(type="button" value="40$" name="price-40%" id="price-smaller" aria-label="Pull left")
+                    label.range-controls__price.range-controls__price--right(for="price-bigger") $ 240
+                      input.range-controls__toggle.range-controls__toggle--right(type="button" value="240$" name="price-240%" id="price-bigger" aria-label="Pull right")
+
 
               fieldset.filters__category
                 +filter-button("Color")
