@@ -116,14 +116,31 @@
     padding-bottom: 28px;
   }
 
+  .main-header__toggle-wrapper {
+    display: none;
+  }
+
   .main-header__nav-list,
   .main-header__user-list {
     padding-top: 45px;
   }
 
+  .main-header__nav {
+    &--closed {
+      display: grid;
+      grid-row: 1 / 2;
+    }
+  }
+
   .main-header__nav-list {
     max-width: auto;
     display: flex;
+  }
+
+  .main-header__nav--closed {
+    .main-header__nav-list {
+      padding-top: 0;
+    }
   }
 
   .main-header__nav-item {
@@ -135,6 +152,16 @@
     gap: 0;
     margin: 0;
     margin-left: auto;
+  }
+
+  .main-header__user-nav--with-burger {
+    .main-header__user-list {
+      gap: 35px;
+    }
+  }
+
+  .main-header__user-icon {
+    width: 20px;
   }
 }
 

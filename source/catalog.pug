@@ -65,7 +65,6 @@ block content
                     label.range-controls__price.range-controls__price--right(for="price-bigger") $ 240
                       input.range-controls__toggle.range-controls__toggle--right(type="button" value="240$" name="price-240%" id="price-bigger" aria-label="Pull right")
 
-
               fieldset.filters__category
                 +filter-button("Color")
                 div.filters__colors-wrap
@@ -92,7 +91,7 @@ block content
           +catalog-item("catalog", "img/woman-jacket-2", "Woman in denim jacket", "Jacket", "$ 70")
           +catalog-item("catalog", "img/woman-jacket-3", "Woman in denim jacket", "Jacket", "$ 60")
           +catalog-item("catalog", "img/woman-jacket-4", "Woman in denim jacket", "Jacket", "$ 50")
-          li.catalog__card.catalog__card-large
+          li.catalog__card.catalog__card-big
             a.catalog__card-title(href="#") Jacket
             picture
               source(type="image/webp" media="(min-width: 1320px)" srcset="img/woman-jacket-5-desktop.webp")
@@ -100,7 +99,7 @@ block content
               source(type="image/webp" srcset="img/woman-jacket-5-mobile.webp")
               source(media="(min-width: 1320px)" srcset="img/woman-jacket-5-desktop.jpg")
               source(media="(min-width: 768px)" srcset="img/woman-jacket-5-tablet.jpg")
-              img.season-collection__image(src="img/woman-jacket-5-mobile.jpg" width="290" height="442" alt="Woman in denim jacket")
+              img.catalog__image-big(src="img/woman-jacket-5-mobile.jpg" width="290" height="442" alt="Woman in denim jacket")
             p.catalog__card-price $ 160
           |
           |
