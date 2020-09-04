@@ -171,6 +171,11 @@
 
     padding-top: 20px;
     padding-bottom: 28px;
+
+    &--with-burger {
+      padding-top: 30px;
+      padding-bottom: 0;
+    }
   }
 
   .main-header__nav-list,
@@ -179,6 +184,12 @@
     flex-direction: column;
     align-items: flex-start;
     padding-top: 50px;
+  }
+
+  .main-header__nav--with-burger {
+    .main-header__nav-list {
+      flex-direction: row;
+    }
   }
 
   .main-header__nav-item,
@@ -192,5 +203,14 @@
 
   .main-header__user-list {
     align-items: flex-end;
+  }
+
+  .main-header__user-nav--with-burger {
+    .main-header__user-list {
+      align-items: flex-start;
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 35px;
+    }
   }
 }

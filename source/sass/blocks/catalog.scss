@@ -90,7 +90,7 @@
   .catalog__container {
     @include tablet-container;
 
-    padding-top: 0;
+    padding-top: 100px;
     padding-bottom: 100px;
   }
 
@@ -140,5 +140,47 @@
   .catalog__btn {
     width: 206px;
     margin-top: 50px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .catalog__container {
+    @include desktop-container;
+
+    padding-top: 130px;
+  }
+
+  .catalog__list {
+    grid-template-columns: repeat(4, auto);
+    gap: 66px;
+    margin-top: 40px;
+  }
+
+  .catalog__card-title {
+    padding-top: 13px;
+  }
+
+  .catalog__card-price {
+    padding-top: 7px;
+  }
+
+  .catalog__card-image {
+    width: 243px;
+  }
+
+  .catalog__card-big {
+    grid-column: -1 / -3;
+  }
+
+  .catalog__image-big {
+    width: 552px;
+  }
+
+  .catalog__controls {
+    margin-top: 60px;
+  }
+
+  .catalog__btn {
+    margin-top: 40px;
   }
 }

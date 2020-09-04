@@ -34,7 +34,9 @@ block content
           li.breadcrumbs__item.breadcrumbs__item--active
             a.breadcrumbs__link.breadcrumbs__link--active Jackets
         h1.catalog-promo__title Denim Collection Fall 2020
-        img.catalog-promo__image(src="http://placehold.it/299x260" width="299" height="260" alt="Denim jacket patch")
+        picture.catalog-promo__image-wrapper
+          source(type="image/webp" srcset="img/catalog-promo.webp")
+          img.catalog-promo__image(src="img/catalog-promo.jpg" width="294" height="260" alt="Denim jacket patch")
 
     section.main-page__catalog.catalog
       div.catalog__container

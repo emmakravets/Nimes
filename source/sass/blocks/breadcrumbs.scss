@@ -44,3 +44,15 @@
     color: $dark-gray-blue;
   }
 }
+
+@media (min-width: $tablet-width) {
+  .breadcrumbs {
+    padding-top: 75px;
+  }
+
+  .breadcrumbs__item {
+    &--mobile-hidden {
+      display: block;
+    }
+  }
+}
