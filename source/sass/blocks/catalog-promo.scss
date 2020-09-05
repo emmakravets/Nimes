@@ -88,7 +88,7 @@
   }
 }
 
-@media (min-width: $tablet-width) {
+@media (min-width: $desktop-width) {
   .catalog-promo__container {
     @include desktop-container;
 
