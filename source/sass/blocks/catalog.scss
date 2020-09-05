@@ -90,8 +90,13 @@
   .catalog__container {
     @include tablet-container;
 
-    padding-top: 100px;
+    padding-top: 25px;
     padding-bottom: 100px;
+  }
+
+  .catalog__filters {
+    margin: 0;
+    margin-left: auto;
   }
 
   .catalog__list {

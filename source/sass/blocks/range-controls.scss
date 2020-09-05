@@ -57,3 +57,26 @@
   border-radius: 50%;
   cursor: pointer;
 }
+
+@media (min-width: $tablet-width) {
+  .range-controls {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+
+  .range-controls__bar {
+    left: 20px;
+
+    width: calc(100% - 20px - 27px);
+  }
+
+  .range-controls__price {
+    &--left {
+      left: 10px;
+    }
+
+    &--right {
+      right: 10px;
+    }
+  }
+}
