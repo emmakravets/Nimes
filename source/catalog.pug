@@ -49,43 +49,44 @@ block content
               span.filters__toggle-title Filter by
               span.filters__toggle-icon.filters__toggle-icon--closed
 
-            div.filters__header
-              button.filters__clear-btn(type="reset") Clear all
-              span.filters__header-title Filters
-              button.filters__close-btn(type="button") Close
+            div.filters__form-container.filters__form-container--opened
+              div.filters__header
+                button.filters__clear-btn(type="reset") Clear all
+                span.filters__header-title Filters
+                button.filters__close-btn(type="button") Close
 
-            section.filters__categories
-              h4.visually-hidden Filters categories
-              fieldset.filters__category
-                +filter-button("Price")
-                div.filters__price-range.range-controls
-                  div.range-controls__line
-                    div.range-controls__bar
+              section.filters__categories
+                h4.visually-hidden Filters categories
+                fieldset.filters__category
+                  +filter-button("Price")
+                  div.filters__price-range.range-controls
+                    div.range-controls__line
+                      div.range-controls__bar
 
-                    label.range-controls__price.range-controls__price--left(for="price-smaller") $ 40
-                      input.range-controls__toggle.range-controls__toggle--left(type="button" value="40$" name="price-40%" id="price-smaller" aria-label="Pull left")
-                    label.range-controls__price.range-controls__price--right(for="price-bigger") $ 240
-                      input.range-controls__toggle.range-controls__toggle--right(type="button" value="240$" name="price-240%" id="price-bigger" aria-label="Pull right")
+                      label.range-controls__price.range-controls__price--left(for="price-smaller") $ 40
+                        input.range-controls__toggle.range-controls__toggle--left(type="button" value="40$" name="price-40%" id="price-smaller" aria-label="Pull left")
+                      label.range-controls__price.range-controls__price--right(for="price-bigger") $ 240
+                        input.range-controls__toggle.range-controls__toggle--right(type="button" value="240$" name="price-240%" id="price-bigger" aria-label="Pull right")
 
-              fieldset.filters__category
-                +filter-button("Color")
-                div.filters__colors-wrap
-                  +filter-category("color", "blue-gray")
-                  +filter-category("color", "blue")
-                  +filter-category("color", "gray")
-                  +filter-category("color", "black")
-                  +filter-category("color", "light-gray")
-                  +filter-category("color", "bright-blue")
+                fieldset.filters__category
+                  +filter-button("Color")
+                  div.filters__colors-wrap
+                    +filter-category("color", "blue-gray")
+                    +filter-category("color", "blue")
+                    +filter-category("color", "gray")
+                    +filter-category("color", "black")
+                    +filter-category("color", "light-gray")
+                    +filter-category("color", "bright-blue")
 
-              fieldset.filters__category
-                +filter-button("Collection")
-                div.filters__collection
-                  +filter-category("collection", "casual")
-                  +filter-category("collection", "petite")
-                  +filter-category("collection", "classic")
-                  +filter-category("collection", "soulluxe")
+                fieldset.filters__category
+                  +filter-button("Collection")
+                  div.filters__collection
+                    +filter-category("collection", "casual")
+                    +filter-category("collection", "petite")
+                    +filter-category("collection", "classic")
+                    +filter-category("collection", "soulluxe")
 
-            button.filters__btn.btn(type="button") Apply (9 products)
+              button.filters__btn.btn(type="button") Apply (9 products)
 
         include ./layouts/catalog-mixins
         ul.catalog__list
