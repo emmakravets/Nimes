@@ -6,6 +6,9 @@
   "devDependencies": {
     "@htmlacademy/editorconfig-cli": "1.x",
     "autoprefixer": "^9.5.1",
+    "babel-core": "6.26.3",
+    "babel-loader": "8.1.0",
+    "babel-preset-latest": "6.24.1",
     "browser-sync": "^2.26.7",
     "del": "^5.1.0",
     "gh-pages": "^2.1.1",
@@ -24,7 +27,10 @@
     "gulp-webp": "^4.0.1",
     "posthtml-include": "^1.3.2",
     "stylelint": "10.1.x",
-    "stylelint-config-htmlacademy": "^0.1.4"
+    "stylelint-config-htmlacademy": "^0.1.4",
+    "webpack": "4.44.1",
+    "webpack-cli": "3.3.12",
+    "webpack-stream": "6.1.0"
   },
   "scripts": {
     "editorconfig": "editorconfig-cli",

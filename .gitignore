@@ -11,3 +11,5 @@ build/
 node_modules/
 npm-debug.*
 Thumbs.db
+source/js/bundle.js
+source/js/bundle.js.map

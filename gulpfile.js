@@ -15,11 +15,12 @@ const uglify = require("gulp-uglify");
 const imagemin = require("gulp-imagemin");
 const webp = require("gulp-webp");
 const svgstore = require("gulp-svgstore");
-const posthtml = require("gulp-posthtml");
-const include = require("posthtml-include");
 const del = require("del");
 const server = require("browser-sync").create();
 
+const webpack = require("webpack");
+const webpackStream = require("webpack-stream");
+const webpackConfig = require("./webpack.config.js");
 const pug = require("gulp-pug");
 
 gulp.task("clean", function () {
@@ -70,16 +71,6 @@ gulp.task("pug", function () {
     .pipe(gulp.dest("build"));
 });
 
-gulp.task("js", function () {
-  return gulp.src("source/js/script.js")
-    .pipe(plumber())
-    .pipe(sourcemap.init())
-    .pipe(uglify())
-    .pipe(rename("script.min.js"))
-    .pipe(sourcemap.write("."))
-    .pipe(gulp.dest("build/js"));
-});
-
 gulp.task("images", function () {
   return gulp.src("source/img/**/*.{png,jpg,svg}")
     .pipe(imagemin([
@@ -96,6 +87,13 @@ gulp.task("webp", function () {
     .pipe(gulp.dest("build/img"));
 });
 
+gulp.task("js", (done) => {
+  gulp.src("source/js/main.js")
+    .pipe(webpackStream(webpackConfig), webpack)
+    .pipe(gulp.dest("build/js"));
+    done();
+});
+
 gulp.task("server", function () {
   server.init({
     server: "build/",
@@ -108,7 +106,7 @@ gulp.task("server", function () {
   gulp.watch("source/sass/**/*.{scss,sass}", gulp.series("css"));
   gulp.watch("source/img/*-{icon,logo}.svg", gulp.series("sprite", "pug", "refresh"));
   gulp.watch("source/**/*.pug", gulp.series("pug", "refresh"));
-  gulp.watch("source/js/*.js", gulp.series("js", "refresh"));
+  gulp.watch("source/js/**/*.js", gulp.series("js", "refresh"));
 });
 
 gulp.task("refresh", function (done) {
