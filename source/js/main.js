@@ -1,8 +1,4 @@
-import "jquery";
+import ScrollDown from "src/scroll-down.js";
 
-jQuery(function ($) {
-  $(`.bestsellers__btn`).click((evt) => {
-    evt.preventDefault();
-    console.log(`1`);
-  });
-});
+const scrollDown = new ScrollDown();
+scrollDown.scrollPageDown();
