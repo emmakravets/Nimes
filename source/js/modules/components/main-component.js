@@ -2,7 +2,7 @@ import {createElement} from "src/utils/render";
 
 export default class MainComponent {
   constructor() {
-    if (new.target === Component) {
+    if (new.target === MainComponent) {
       throw new Error(`Can't instantiate Component, only concrete one.`);
     }
     this._element = null;

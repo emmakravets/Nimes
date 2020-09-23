@@ -5,6 +5,7 @@ const BATCH_RENDER_STEP = 9;
 
 export default class CatalogController {
   constructor() {
+    this._renderedCards = 0;
     this._catalogCardComponent = null;
   }
 
@@ -20,16 +21,16 @@ export default class CatalogController {
 
   _renderBatchCatalogCards(catalogCards) {
     const catalogContainerElement = document.querySelector(`.catalog__list`);
-    const from = BATCH_RENDER_STEP;
+    const from = this._renderedCards;
     const to = from + BATCH_RENDER_STEP;
 
-    const cardControllerBatch = catalogCards
+    catalogCards
       .slice(from, to)
       .map((catalogCard) => {
         this._renderCatalogCard(catalogContainerElement, catalogCard);
       });
 
-    return cardControllerBatch;
+    this._renderedCards = Math.min(to, catalogCards.length);
   }
 
   _renderMoreCatalogCards(catalogCards) {
@@ -38,9 +39,6 @@ export default class CatalogController {
     loadMoreButtonElement.addEventListener(`click`, () => {
       if (catalogCards.length !== 0) {
         this._renderBatchCatalogCards(catalogCards);
-        if (this._shouldButtonBeRendered(catalogCards)) {
-          this._renderMoreButton(catalogCards);
-        }
       }
     });
   }
