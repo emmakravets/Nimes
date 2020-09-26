@@ -1,5 +1,10 @@
+import "jquery";
 import CatalogCardComponent from "src/components/catalog-card";
 import {renderElement} from "src/utils/render";
+
+const URL = `./js/modules/model/data.json`;
+const METHOD = `GET`;
+const DATA_TYPE = `html`;
 
 const BATCH_RENDER_STEP = 9;
 
@@ -10,7 +15,7 @@ export default class CatalogController {
   }
 
   render(catalogCards) {
-    this._renderMoreCatalogCards(catalogCards);
+    this._renderMoreCatalogCards();
   }
 
   _renderCatalogCard(containerElement, catalogCard) {
@@ -33,13 +38,30 @@ export default class CatalogController {
     this._renderedCards = Math.min(to, catalogCards.length);
   }
 
-  _renderMoreCatalogCards(catalogCards) {
+  _renderMoreCatalogCards() {
     const loadMoreButtonElement = document.querySelector(`.catalog__btn`);
 
-    loadMoreButtonElement.addEventListener(`click`, () => {
-      if (catalogCards.length !== 0) {
-        this._renderBatchCatalogCards(catalogCards);
-      }
-    });
+    const loadMoreButtonElementClickHandler = () => {
+      $.ajax({
+        url: URL,
+        type: METHOD,
+        dataType: DATA_TYPE,
+        success: (res) => {
+          const catalogCards = $.parseJSON(res);
+
+          if (catalogCards.length !== 0) {
+            this._renderBatchCatalogCards(catalogCards);
+          }
+
+          if (this._renderedCards >= catalogCards.length) {
+            const parentElement = loadMoreButtonElement.parentElement;
+            parentElement.removeChild(loadMoreButtonElement);
+            loadMoreButtonElement.removeEventListener(`click`, loadMoreButtonElementClickHandler);
+          }
+        }
+      });
+    }
+
+    loadMoreButtonElement.addEventListener(`click`, loadMoreButtonElementClickHandler);
   }
 }
