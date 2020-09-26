@@ -14,7 +14,7 @@ export default class CatalogController {
     this._catalogCardComponent = null;
   }
 
-  render(catalogCards) {
+  render() {
     this._renderMoreCatalogCards();
   }
 
@@ -51,6 +51,7 @@ export default class CatalogController {
 
           if (catalogCards.length !== 0) {
             this._renderBatchCatalogCards(catalogCards);
+            this._changeLoadLine();
           }
 
           if (this._renderedCards >= catalogCards.length) {
@@ -63,5 +64,11 @@ export default class CatalogController {
     }
 
     loadMoreButtonElement.addEventListener(`click`, loadMoreButtonElementClickHandler);
+  }
+
+  _changeLoadLine() {
+    const catalogCardsCountElement = document.querySelector(`.catalog__controls-count`);
+
+    catalogCardsCountElement.textContent = +catalogCardsCountElement.textContent + BATCH_RENDER_STEP;
   }
 }
