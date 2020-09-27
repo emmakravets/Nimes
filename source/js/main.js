@@ -1,8 +1,8 @@
 import ScrollDown from "src/scroll-down";
-import CatalogController from "src/controllers/catalog-controller";
+import CatalogCardsResponse from "src/backend/catalog-cards-response";
 
-const catalogController = new CatalogController();
-catalogController.render();
+const catalogCardsResponse = new CatalogCardsResponse();
+catalogCardsResponse.loadMoreCatalogCards();
 
 const scrollDown = new ScrollDown();
 scrollDown.scrollPageDown();

@@ -1,21 +1,20 @@
-import "jquery";
 import CatalogCardComponent from "src/components/catalog-card";
 import {renderElement} from "src/utils/render";
 
-const URL = `./js/modules/model/data.json`;
-const METHOD = `GET`;
-const DATA_TYPE = `html`;
-
 const BATCH_RENDER_STEP = 9;
+const CATALOG_CARDS_ON_START_COUNT = 9;
 
 export default class CatalogController {
   constructor() {
     this._renderedCards = 0;
     this._catalogCardComponent = null;
+
+    this._catalogCardsCountElement = document.querySelector(`.catalog__controls-count`);
   }
 
-  render() {
-    this._renderMoreCatalogCards();
+  render(catalogCards) {
+    this._renderMoreCatalogCards(catalogCards);
+    this._catalogCardsCountElement.textContent = catalogCards.length + CATALOG_CARDS_ON_START_COUNT;
   }
 
   _renderCatalogCard(containerElement, catalogCard) {
@@ -38,37 +37,41 @@ export default class CatalogController {
     this._renderedCards = Math.min(to, catalogCards.length);
   }
 
-  _renderMoreCatalogCards() {
+  _renderMoreCatalogCards(catalogCards) {
     const loadMoreButtonElement = document.querySelector(`.catalog__btn`);
 
     const loadMoreButtonElementClickHandler = () => {
-      $.ajax({
-        url: URL,
-        type: METHOD,
-        dataType: DATA_TYPE,
-        success: (res) => {
-          const catalogCards = $.parseJSON(res);
+      if (catalogCards.length !== 0) {
+        this._renderBatchCatalogCards(catalogCards);
+        this._changeCatalogCardsCount(catalogCards);
+        //this._changeProgressBar();
+      }
 
-          if (catalogCards.length !== 0) {
-            this._renderBatchCatalogCards(catalogCards);
-            this._changeLoadLine();
-          }
-
-          if (this._renderedCards >= catalogCards.length) {
-            const parentElement = loadMoreButtonElement.parentElement;
-            parentElement.removeChild(loadMoreButtonElement);
-            loadMoreButtonElement.removeEventListener(`click`, loadMoreButtonElementClickHandler);
-          }
-        }
-      });
+      if (this._renderedCards >= catalogCards.length) {
+        const parentElement = loadMoreButtonElement.parentElement;
+        parentElement.removeChild(loadMoreButtonElement);
+        loadMoreButtonElement.removeEventListener(`click`, loadMoreButtonElementClickHandler);
+      }
     }
 
     loadMoreButtonElement.addEventListener(`click`, loadMoreButtonElementClickHandler);
   }
 
-  _changeLoadLine() {
-    const catalogCardsCountElement = document.querySelector(`.catalog__controls-count`);
+  _changeCatalogCardsCount(catalogCards) {
+    const catalogLoadedCardsCountElement = document.querySelector(`.catalog__controls-count-loaded`);
 
-    catalogCardsCountElement.textContent = +catalogCardsCountElement.textContent + BATCH_RENDER_STEP;
+    catalogLoadedCardsCountElement.textContent = this._renderedCards + CATALOG_CARDS_ON_START_COUNT;
+    this._catalogCardsCountElement.textContent = catalogCards.length + CATALOG_CARDS_ON_START_COUNT;
   }
+
+  /* _changeProgressBar() {
+    const progressBarElement = document.querySelector(`.catalog__controls-range`);
+    const loadedProgressBarElement = document.querySelector(`.catalog__controls-range-loaded`);
+
+    let progressBarElementWidthOnStart = loadedProgressBarElement.offsetWidth;
+    progressBarElementWidthOnStart = `${Math.round((progressBarElementWidthOnStart * 100) / progressBarElement.offsetWidth)}`;
+
+    loadedProgressBarElement.style.position = `relative`;
+    loadedProgressBarElement.style.left = `${+progressBarElementWidthOnStart * 2}%`;
+  } */
 }
